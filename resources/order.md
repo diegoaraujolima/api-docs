@@ -22,6 +22,10 @@ An order is created when a customer completes the checkout process. Orders also 
 > 
 > [Cancel an order](#POST-ordersidcancel)
 > 
+> [Create Invoices](#POST-metafields)
+> 
+> [Get Invoices](#GET-metafields)
+> 
 
 Properties
 ----------
@@ -1304,3 +1308,32 @@ Cancel an Order
     }
 }
 ```
+
+#### POST /metafields
+
+Create Invoices
+
+```json
+{
+    "namespace": "invoice",
+    "key": "number",
+    "value": "INVOICE_NUMBER",
+    "description": "Invoice Number",
+    "owner_resource": "Order",
+    "owner_id": "ORDER_ID"
+}
+```
+
+#### GET /metafields/orders?owner_id=ORDER_ID&namespace=nfe&key=number&fields=owner_id,key,value
+
+Read Invoices
+
+```json
+{
+    "owner_id": "ORDER_ID",
+    "key": "number",
+    "value": "INVOICE_NUMBER"
+}
+```
+You can also get all invoices created from a specific data (https://github.com/TiendaNube/api-docs/blob/master/resources/metafields.md)
+
