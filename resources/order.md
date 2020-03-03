@@ -22,9 +22,9 @@ An order is created when a customer completes the checkout process. Orders also 
 > 
 > [Cancel an order](#POST-ordersidcancel)
 > 
-> [Create Invoices](#POST-metafields)
+> [Create NFe (Brasil)](#POST-NFe(Brasil))
 > 
-> [Get Invoices](#GET-metafields)
+> [Get NFe (Brasil)](#GET-NFe(Brasil))
 > 
 
 Properties
@@ -1309,31 +1309,31 @@ Cancel an Order
 }
 ```
 
-#### POST /metafields
+#### POST NFe(Brasil)
 
-Create Invoices
+Create a NFe  
 
 ```json
 {
-    "namespace": "invoice",
+    "namespace": "nfe",
     "key": "number",
-    "value": "INVOICE_NUMBER",
-    "description": "Invoice Number",
+    "value": "NÚMERO_DE_LA_NFe",
+    "description": "Número da NFe",
     "owner_resource": "Order",
     "owner_id": "ORDER_ID"
 }
 ```
 
-#### GET /metafields/orders?owner_id=ORDER_ID&namespace=nfe&key=number&fields=owner_id,key,value
+#### GET NFes (Brasil)
 
-Read Invoices
+Read NFe
 
 ```json
 {
-    "owner_id": "ORDER_ID",
+     "owner_id": "ORDER_ID",
     "key": "number",
-    "value": "INVOICE_NUMBER"
+    "value": "NÚMERO_DE_LA_NFe"
 }
 ```
-You can also get all invoices created from a specific data (https://github.com/TiendaNube/api-docs/blob/master/resources/metafields.md)
+
 
